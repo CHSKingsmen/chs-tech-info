@@ -1,0 +1,9 @@
+extends ../docs-default-layout
+
+block breadcrumbs
+  li
+    a(href='/what-we-offer') What We Offer
+  li.active Digital Assignment Submission
+
+block docs
+  include:markdown-it(html) digital-assignment-submission.md

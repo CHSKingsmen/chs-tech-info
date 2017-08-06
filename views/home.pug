@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .container-fluid
+    if messages.error
+      .alert.alert-danger(role='alert')
+        for error in messages.error
+          div= error.msg
+    if messages.success
+      .alert.alert-success(role='alert')
+        for success in messages.success
+          div= success.msg
+    if messages.info
+      .alert.alert-info(role='alert')
+        for info in messages.info
+          div= info.msg
+
+    .jumbotron
+      h1 Welcome!
+      p We crafted this website to help our CHS community with everything tech!
+
+    .row
+      .col-sm-4
+        .panel
+          .panel-body
+            h3 Parents and prospective families!
+            p CHS is proud to offer our students the latest technologies to aid in their learning. From our 1:1 iPad program to our Student Information System, to the many online services that we provide our students, learn about our technological offerings.
+            a.btn.btn-default(href='/what-we-offer', role='button') What We Offer
+      .col-sm-4
+        .panel
+          .panel-body
+            h3 Students
+            p Need help using your iPad? Having trouble finding things in RenWeb? Want to access your Office 365 benefits? Need to learn how to submit assignments online or take notes on your iPad? You've come to the right place!
+            a.btn.btn-default(href='/docs/students', role='button') View details
+      .col-sm-4
+        .panel
+          .panel-body
+            h3 Faculty and Staff
+            p Need to set up your iPad and Computer? Having trouble accessing your email? Do you need access to an otherwise blocked website for class? Need help with your SMART Board? You've come to the right place!
+            a.btn.btn-default(href='#', role='button') View details
+
+            

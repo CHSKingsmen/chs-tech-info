@@ -1,0 +1,32 @@
+extends ../layout
+
+mixin section(title)
+  h4=title
+  if block
+    block
+  br
+mixin headSection(title)
+  h2=title
+  if block
+    block
+  br
+
+block content
+  .container-fluid
+    .row
+      ol.breadcrumb
+         block breadcrumbs
+    .row
+      .col-sm-2
+        ul.nav.nav-pills.nav-stacked
+          each obj, headingFromList in allHeadings
+            li(role='presentation', class=(heading === headingFromList) ? 'active' : null)
+              a(href=obj.url)= obj.title
+            //- if (subheads != null && headingFromList === heading)
+            //-   ul.list-group
+            //-   each subhead in subheads
+            //-     li.list-group-item
+            //-       a(href=subhead.url)= subhead.title
+
+      .col-lg-10
+        block docs

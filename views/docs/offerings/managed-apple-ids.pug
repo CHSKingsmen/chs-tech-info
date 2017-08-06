@@ -1,0 +1,9 @@
+extends ../docs-default-layout
+
+block breadcrumbs
+  li
+    a(href='/what-we-offer') What We Offer
+  li.active Managed Apple IDs
+
+block docs
+  include:markdown-it(html) managed-apple-ids.md

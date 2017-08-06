@@ -1,0 +1,9 @@
+extends ../docs-default-layout
+
+block breadcrumbs
+  li
+    a(href='/what-we-offer') What We Offer
+  li.active Office 365
+
+block docs
+  include:markdown-it(html) office365.md
